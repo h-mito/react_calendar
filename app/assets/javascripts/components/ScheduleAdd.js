@@ -1,6 +1,6 @@
 import React from "react"
 
-const ScheduleAdd = ({id, ymd, comment, onCommentAdd,onCommentChange}) => {
+const ScheduleAdd = ({id, ymd, comment, onCommentChange, onCommentAdd, onCommentUpdate, onCommentDelete}) => {
   let inpComment
   let btn
   if (id == -1){
@@ -11,11 +11,11 @@ const ScheduleAdd = ({id, ymd, comment, onCommentAdd,onCommentChange}) => {
   else {
     btn = (
           <div>
-            <button onClick={(e) => onCommentUpdate(ymd, inpComment.value)}>
+            <button onClick={(e) => onCommentUpdate(id, ymd, inpComment.value)}>
               修正
             </button>
             {"  "}
-            <button onClick={(e) => onCommentDelete(ymd, inpComment.value)}>
+            <button onClick={(e) => onCommentDelete(id, ymd)}>
               削除
             </button>
           </div>

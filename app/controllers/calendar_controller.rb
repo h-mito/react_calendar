@@ -18,6 +18,39 @@ class CalendarController < ApplicationController
     render :json=> response
   end
 
+  def updateSchedule
+    response = {status:true}
+
+    s = Schedule.find(params[:id])
+    s.update({ymd: params[:ymd] , comment: params[:comment]})
+
+    arr = s.ymd.split("/")
+    likeStr = arr[0] + "/" + arr[1] + "/%"
+    recs = Schedule.where("ymd like ?", likeStr)
+            .order("ymd")
+
+    response["rows"] = recs
+
+    render :json=> response
+  end
+
+  def deleteSchedule
+    response = {status:true}
+
+    s = Schedule.find(params[:id])
+    ymd = s.ymd
+    s.delete()
+
+    arr = ymd.split("/")
+    likeStr = arr[0] + "/" + arr[1] + "/%"
+    recs = Schedule.where("ymd like ?", likeStr)
+            .order("ymd")
+
+    response["rows"] = recs
+
+    render :json=> response
+  end
+
   def readSchedules
     response = {status:true}
 
