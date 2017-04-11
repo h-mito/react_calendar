@@ -23,16 +23,18 @@ const Calendar2 = ({year, month , schedules}) => {
 
   ycnt = staYoubi
   for (i = 1 ; i <= endDay.getDate() ;i++){
+    let schs = filterSchedule(schedules, i)
+
     if (ycnt == 0){
-      cells.push(<CCellSunday key={i} year={year} month={month} day={i} />)
+      cells.push(<CCellSunday key={i} year={year} month={month} day={i} schs={schs} />)
       ycnt++
     }
     else if (ycnt == 6){
-      cells.push(<CCellSaturday key={i} year={year} month={month} day={i} />)
+      cells.push(<CCellSaturday key={i} year={year} month={month} day={i} schs={schs} />)
       ycnt = 0
     }
     else {
-      cells.push(<CCellNormal key={i} year={year} month={month} day={i} />)
+      cells.push(<CCellNormal key={i} year={year} month={month} day={i} schs={schs} />)
       ycnt++
     }
   }
@@ -44,13 +46,24 @@ const Calendar2 = ({year, month , schedules}) => {
   }
 
   return (
-    <div>
+    <div className="left-side">
       <CYmSelector />
       <div id="calendar">
         {cells}
       </div>
     </div>
   )
+}
+
+const filterSchedule = (schs,dt) =>{
+  let rtn = []
+  schs.map((item) => {
+    let arr = item.ymd.split("/")
+    if (arr[2] == dt){
+      rtn.push(item)
+    }
+  })
+  return rtn
 }
 
 export default Calendar2

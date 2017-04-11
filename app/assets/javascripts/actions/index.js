@@ -15,12 +15,25 @@ export const new_schedule = (year,month,day) => {
   }
 }
 
-export const edit_schedule = (year,month,day,comment) => {
+export const edit_schedule = (id, ymd, comment) => {
   return {
     type: "EDIT_SCHEDULE",
-    year: year,
-    month: month,
-    day: day,
+    id: id,
+    ymd: ymd,
+    comment: comment
+  }
+}
+
+export const read_schedules = (schs) => {
+  return {
+    type: "READ_SCHEDULES",
+    schs: schs
+  }
+}
+
+export const comment_change = (comment) => {
+  return {
+    type: "COMMENT_CHANGE",
     comment: comment
   }
 }

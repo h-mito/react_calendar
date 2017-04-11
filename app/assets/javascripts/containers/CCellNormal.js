@@ -6,14 +6,14 @@ const mapStateToProps = (state, ownProps) => {
   return {
     year: ownProps.year,
     month: ownProps.month,
-    day: ownProps.day
+    day: ownProps.day,
+    schs: ownProps.schs
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onNewSchedule: (year,month,day) => {
-      alert("onNewSchedule-" + year + "/" + month + "/" +day )
       dispatch(new_schedule(year,month,day))
     }
   }

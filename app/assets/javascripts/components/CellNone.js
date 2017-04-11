@@ -4,7 +4,7 @@ const CellNone = () => {
   return (
     <div className="cell">
       <div className="none">-</div>
-      <div>yotei</div>
+      <div></div>
     </div>
   )
 }

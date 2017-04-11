@@ -2,7 +2,6 @@ import {connect} from "react-redux"
 import Calendar2 from "../components/Calendar2"
 
 const mapStateToProps = (state) => {
-  console.log(state.ym)
 
   return {
     year: state.ym.year,
