@@ -1,3 +1,40 @@
 // Place all the styles related to the calendar controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#calendar{
+  border-left: 1px solid #cccccc;
+  border-top:  1px solid #cccccc;
+  width: 707px;
+  height: 600px;
+
+  div.cell {
+    width: 100px;
+    height: 100px;
+    border-right: 1px solid #cccccc;
+    border-bottom:  1px solid #cccccc;
+    float: left;
+
+    .normal {
+      background-color: #ffffff;
+    }
+    .saturday {
+      background-color: #9abfe5;
+    }
+    .sunday {
+      background-color: #da7777;
+    }
+    .none {
+      background-color: #cdd0d2;
+    }
+
+  }
+}
+
+div.ymSelector{
+  font-size: 30px;
+  margin-bottom: 10px;
+  select{
+    font-size: 30px;
+  }
+}

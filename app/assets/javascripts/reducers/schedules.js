@@ -1,4 +1,4 @@
-const schedules = (state = {} action) => {
+const schedules = (state = {}, action) => {
   switch (action.type) {
     default:
       return state
