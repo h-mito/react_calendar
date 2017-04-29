@@ -22,5 +22,6 @@ Things you may want to cover:
     - ブラウザーで以下のURLにアクセス
     - http://localhost:3000/calendar/index
 
+* ちょっとGithubの練習です。。。
 
 ![Reactスケジューラー](http://beautifulajax.dip.jp/wp-content/uploads/2017/04/sc-1.png "サンプル")
